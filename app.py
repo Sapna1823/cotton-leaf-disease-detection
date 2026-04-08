@@ -138,7 +138,7 @@ if uploaded_file is not None:
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.image(image, caption="Uploaded Cotton Leaf Image", use_container_width=True)
+        st.image(image, caption="Uploaded Cotton Leaf Image")
 
     with col2:
         st.markdown("### Prediction Panel")
