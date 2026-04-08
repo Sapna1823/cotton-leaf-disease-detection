@@ -133,12 +133,13 @@ st.markdown('<div class="section-title">Upload Leaf Image</div>', unsafe_allow_h
 uploaded_file = st.file_uploader("Choose a cotton leaf image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    image = Image.open(uploaded_file)
+    image = Image.open(uploaded_file).convert("RGB")
+    image_array=np.array(image)
 
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.image(image, caption="Uploaded Cotton Leaf Image")
+        st.image(image_array, caption="Uploaded Cotton Leaf Image")
 
     with col2:
         st.markdown("### Prediction Panel")
